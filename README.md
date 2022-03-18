@@ -29,11 +29,21 @@ return [
 ```php
 use Arispati\LaravelLogS3\Facades\Log;
 
+// create log name
 Log::new('new-log');
+// enabled to write file
 Log::enabled(true);
+// logging
 Log::debug('Log Start');
+// create a timer
 Log::timer('log-start');
-usleep(500000);
+// logging with timer duration
 Log::debugDuration('Log End', 'log-start');
+// write to file
 Log::write();
+```
+
+### Testing
+```bash
+ ./vendor/bin/phpunit 
 ```
